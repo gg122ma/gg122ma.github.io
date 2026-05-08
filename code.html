@@ -295,250 +295,61 @@
 <footer class="footer"><p>© 2025 PHŌTO Photography Collection · All Rights Reserved</p></footer>
 
 <script>
-/* ================================================================
-   DATA — 26 条真实记录，含主要人物与拍摄设备
-   ================================================================ */
-const SHOOTS = [
-    {
-        slug:'2024-12-24', date:'2024-12-24', dateDisplay:'2024年12月24日',
-        year:2024, month:12, title:'圣诞节',
-        description:'圣诞节拍摄',
-        people:['圣诞节活动'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/12A2CwLjjojIkq2Kl4MFGNg_Grq0lTknI?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=1200&q=85','https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=85','https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=85','https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1200&q=85']
-    },
-    {
-        slug:'2025-10-04', date:'2025-10-04', dateDisplay:'2025年10月4日',
-        year:2025, month:10, title:'3x3',
-        description:'3x3 活动拍摄',
-        people:['3x3 活动'], equipment:'vivo X200 Pro',
-        drive:'https://drive.google.com/drive/folders/1fUGyXtHiqTRC7vRATLkk7sPSbQ76RSto?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85','https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85','https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=85','https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=85']
-    },
-    {
-        slug:'2025-10-11', date:'2025-10-11', dateDisplay:'2025年10月11日',
-        year:2025, month:10, title:'3x3',
-        description:'3x3 活动拍摄',
-        people:['3x3 活动'], equipment:'vivo X200 Pro',
-        drive:'https://drive.google.com/drive/folders/19Ao4P2M6CE1hK3Xmw3e9yZBLBesGwXSt?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=85','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=85']
-    },
-    {
-        slug:'2025-10-17', date:'2025-10-17', dateDisplay:'2025年10月17日',
-        year:2025, month:10, title:'谢师宴',
-        description:'谢师宴活动拍摄',
-        people:['谢师宴活动'], equipment:'vivo X200 Pro',
-        drive:'https://drive.google.com/drive/folders/1blJZzLv3EKgwdE97c0woNiFvnAmGgiwQ?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85','https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=85','https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=85','https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=85']
-    },
-    {
-        slug:'2025-12-23-ellee', date:'2025-12-23', dateDisplay:'2025年12月23日',
-        year:2025, month:12, title:'Ellee 家',
-        description:'在 Ellee 家拍摄',
-        people:['Ellee'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1z2WVQOfufmO6mHOrjvLHu4iASMYIS7o7?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=85','https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1200&q=85']
-    },
-    {
-        slug:'2025-12-23-spm', date:'2025-12-23', dateDisplay:'2025年12月23日',
-        year:2025, month:12, title:'最后一天的 SPM',
-        description:'SPM 最后一天拍摄',
-        people:['SPM 活动'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1l343ZbuZsqy9lNrz61LnZ6kWgDVWxw-1?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=85','https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=85','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=85','https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-03', date:'2026-01-03', dateDisplay:'2026年1月3日',
-        year:2026, month:1, title:'Pravick 帮外劳拍照',
-        description:'Pravick 帮外劳拍摄',
-        people:['Pravick'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1bfDooZ0P5gWrK3JqO5y7sWc57J6mwLWm?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=85','https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-07', date:'2026-01-07', dateDisplay:'2026年1月7日',
-        year:2026, month:1, title:'Joe Dy',
-        description:'Joe Dy 拍摄',
-        people:['Joe Dy'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1XwMXnigaL-LsYkg25GO5i3bL_wsRLF3x?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=85','https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=85','https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85','https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-09', date:'2026-01-09', dateDisplay:'2026年1月9日',
-        year:2026, month:1, title:'YX Gabriel Gurney',
-        description:'YX Gabriel Gurney 拍摄',
-        people:['Gabriel Gurney'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/11YC0sZPkQofsYZVo4Sft_44NWQjQtU6D?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=85','https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=85','https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=85','https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-10', date:'2026-01-10', dateDisplay:'2026年1月10日',
-        year:2026, month:1, title:'菩提迎新日',
-        description:'菩提迎新日活动拍摄',
-        people:['菩提迎新日活动'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1X3MxzeHGCCrXPGt9x8zwTcOFToe-ABME?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=85','https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=85','https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=85','https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-11', date:'2026-01-11', dateDisplay:'2026年1月11日',
-        year:2026, month:1, title:'1st Avenue',
-        description:'1st Avenue 拍摄',
-        people:['—'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1rSURx5KgQEP0jOq32o8UYipPMVWPs5Ff?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=85','https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=85','https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=85','https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-19', date:'2026-01-19', dateDisplay:'2026年1月19日',
-        year:2026, month:1, title:'Liqi',
-        description:'Liqi 拍摄',
-        people:['Liqi'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1Ey9nlahik5P-i7qSWgZI6ph4zjEHTpO3?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200&q=85','https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-20', date:'2026-01-20', dateDisplay:'2026年1月20日',
-        year:2026, month:1, title:'Zynn Town',
-        description:'Zynn Town 拍摄',
-        people:['Zynn'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1v2jslFEtnCoZXFrbs0YD5CgE1FaEnW3e?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=85','https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=85','https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=85']
-    },
-    {
-        slug:'2026-01-27', date:'2026-01-27', dateDisplay:'2026年1月27日',
-        year:2026, month:1, title:'Ellee Town',
-        description:'Ellee Town 拍摄',
-        people:['Ellee'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1Apg921HHcoqg19wr4YD2iomAybSvnAnN?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=85','https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=85','https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=85','https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1200&q=85']
-    },
-    {
-        slug:'2026-02-06', date:'2026-02-06', dateDisplay:'2026年2月6日',
-        year:2026, month:2, title:'Howyean',
-        description:'Howyean 拍摄',
-        people:['Howyean'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/18l6YYie1I6FJVC_m80RSaw0bnYVEmJYE?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1200&q=85','https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=85','https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85']
-    },
-    {
-        slug:'2026-02-09', date:'2026-02-09', dateDisplay:'2026年2月9日',
-        year:2026, month:2, title:'Cindy',
-        description:'Cindy 拍摄',
-        people:['Cindy'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1LV8W4AfkeQ1kEMLtpAqaVcJIuScrbCnW?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85','https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1200&q=85','https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=85','https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=85']
-    },
-    {
-        slug:'2026-02-10', date:'2026-02-10', dateDisplay:'2026年2月10日',
-        year:2026, month:2, title:'Gabriel',
-        description:'Gabriel 拍摄',
-        people:['Gabriel'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1VOS8CDB-9JFeRyQ688RD0s5CRLRFxcA_?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=1200&q=85','https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=85','https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=85','https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85']
-    },
-    {
-        slug:'2026-02-12', date:'2026-02-12', dateDisplay:'2026年2月12日',
-        year:2026, month:2, title:'Eason Weiming',
-        description:'Eason Weiming 拍摄',
-        people:['Eason','Weiming'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1NIQJdv8dkxUAro9zXMBmCtXSUooW6iw_?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=85','https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1200&q=85','https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=85','https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=85']
-    },
-    {
-        slug:'2026-02-25', date:'2026-02-25', dateDisplay:'2026年2月25日',
-        year:2026, month:2, title:'Eu Meng',
-        description:'Eu Meng 拍摄',
-        people:['Eu Meng'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1kn0_Kh1TN-LHXitzBcg-2_sa9WcojEzD?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85','https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200&q=85']
-    },
-    {
-        slug:'2026-02-28', date:'2026-02-28', dateDisplay:'2026年2月28日',
-        year:2026, month:2, title:'5SA Farewell',
-        description:'5SA 告别活动拍摄',
-        people:['5SA'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1jh4-HxMzYxaJ152IyaPQ5rCdaJ4PmexR?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=85','https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85','https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=85','https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1200&q=85']
-    },
-    {
-        slug:'2026-03-23', date:'2026-03-23', dateDisplay:'2026年3月23日',
-        year:2026, month:3, title:'Yuzhe',
-        description:'Yuzhe 拍摄',
-        people:['Yuzhe'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1gLRKcUkRw4Syv_pVj6NTdZ9gu8rGc4Qn?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=85','https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=85','https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=85','https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=85']
-    },
-    {
-        slug:'2026-03-24', date:'2026-03-24', dateDisplay:'2026年3月24日',
-        year:2026, month:3, title:'Zynn 升旗山',
-        description:'Zynn 升旗山拍摄',
-        people:['Zynn'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1kJXGGz3g5fSW9l7RyxZn5ecpyLlyxhS6?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85','https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85','https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=85','https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=85']
-    },
-    {
-        slug:'2026-03-25', date:'2026-03-25', dateDisplay:'2026年3月25日',
-        year:2026, month:3, title:'Hongkai',
-        description:'Hongkai 拍摄',
-        people:['Hongkai'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1qAKBDilm1MfL1vabsy12D-etrJoyrxxy?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=85','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=85']
-    },
-    {
-        slug:'2026-04-11', date:'2026-04-11', dateDisplay:'2026年4月11日',
-        year:2026, month:4, title:'Eu Meng',
-        description:'Eu Meng 拍摄',
-        people:['Eu Meng'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1jA3y_FFWwGdRKLqZ_4k3_4iB_bItiN3-?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=85','https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1200&q=85','https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=85','https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=85']
-    },
-    {
-        slug:'2026-04-23', date:'2026-04-23', dateDisplay:'2026年4月23日',
-        year:2026, month:4, title:'Cindy',
-        description:'Cindy 拍摄',
-        people:['Cindy'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1KOPvezoNWfcGsKBYg6Z0VU_4Prtybxvh?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1200&q=85','https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=85','https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85','https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=85']
-    },
-    {
-        slug:'2026-05-05', date:'2026-05-05', dateDisplay:'2026年5月5日',
-        year:2026, month:5, title:'Ellee',
-        description:'Ellee 拍摄',
-        people:['Ellee'], equipment:'vivo X100',
-        drive:'https://drive.google.com/drive/folders/1TF-iQZ3PnepWnTMeEmOmF4zI-QcaPNt7?usp=drive_link',
-        cover:'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80',
-        images:['https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=85','https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=85','https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=85','https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200&q=85']
-    }
-];
+/* ===== 连接 Supabase ===== */
+const SUPABASE_URL = 'https://ohxezoxiuxbqrzfomdyt.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oeGV6b3hpdXhicXJ6Zm9tZHl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxNzIwNTEsImV4cCI6MjA5Mzc0ODA1MX0.f4XCp9NammBkHsv72a2-iSQogqw6l2qOi2rLpZk5SLQ';
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+let SHOOTS = [];
 const MONTH_NAMES = ['','一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
 const YEARS = [2024, 2025, 2026];
-const monthSet = new Set(SHOOTS.map(s => s.year + '-' + s.month));
+let monthSet = new Set();
 const app = document.getElementById('app');
+
+const DEFAULT_COVER = 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&q=80';
+const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200&q=85';
+
+/* 从 Supabase 加载数据 */
+async function loadData() {
+    try {
+        const { data: shoots, error } = await db
+            .from('shoots')
+            .select('*, shoot_images(*)')
+            .order('shoot_date', { ascending: true });
+
+        if (error) throw error;
+
+        SHOOTS = shoots.map(s => {
+            const d = new Date(s.shoot_date);
+            const imgs = (s.shoot_images || [])
+                .sort((a, b) => a.sort_order - b.sort_order)
+                .map(i => i.image_url);
+            return {
+                slug: s.slug,
+                date: s.shoot_date,
+                dateDisplay: d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日',
+                year: s.year_num,
+                month: s.month_num,
+                title: s.title,
+                description: s.description || '',
+                people: s.people || [],
+                equipment: s.equipment || '',
+                drive: s.drive_link,
+                cover: s.cover_url || DEFAULT_COVER,
+                images: imgs.length ? imgs : [s.cover_url || DEFAULT_IMAGE]
+            };
+        });
+
+        monthSet = new Set(SHOOTS.map(s => s.year + '-' + s.month));
+        buildNav();
+        router();
+    } catch (err) {
+        console.error('加载失败:', err);
+        app.innerHTML = '<div style="text-align:center;padding:200px 20px;color:#86868b">'
+            + '<p style="font-size:1.2rem">数据加载失败</p>'
+            + '<p style="font-size:13px;margin-top:8px">' + err.message + '</p></div>';
+    }
+}
 
 function shootsByMonth(y, m) { return SHOOTS.filter(s => s.year === y && s.month === m); }
 function shootBySlug(slug)   { return SHOOTS.find(s => s.slug === slug); }
@@ -595,18 +406,18 @@ document.getElementById('logoLink').addEventListener('click', e => {
 /* ROUTER */
 function router() {
     const hash = window.location.hash || '#/';
-    const monthMatch = hash.match(/^#\/month\/(\d{4})\/(\d{1,2})$/);
-    const shootMatch = hash.match(/^#\/shoot\/(.+)$/);
-    if (monthMatch) renderMonth(+monthMatch[1], +monthMatch[2]);
-    else if (shootMatch) renderDetail(shootMatch[1]);
+    const mm = hash.match(/^#\/month\/(\d{4})\/(\d{1,2})$/);
+    const sm = hash.match(/^#\/shoot\/(.+)$/);
+    if (mm) renderMonth(+mm[1], +mm[2]);
+    else if (sm) renderDetail(sm[1]);
     else renderHome();
     window.scrollTo({ top: 0, behavior: 'instant' });
 }
 window.addEventListener('hashchange', router);
 
 function animateCards() {
-    const cards = app.querySelectorAll('.card.hidden');
-    cards.forEach((c, i) => setTimeout(() => c.classList.add('visible'), 60 * i));
+    app.querySelectorAll('.card.hidden').forEach((c, i) =>
+        setTimeout(() => c.classList.add('visible'), 60 * i));
 }
 
 /* HOME */
@@ -625,8 +436,7 @@ function renderHome() {
         <section class="home-section page-enter">
             <h2 class="home-section-title">近期素材</h2>
             <div class="card-grid">${recent.map(cardHTML).join('')}</div>
-        </section>
-    `;
+        </section>`;
     requestAnimationFrame(animateCards);
     initParallax();
 }
@@ -634,31 +444,25 @@ function renderHome() {
 /* MONTH PAGE */
 function renderMonth(year, month) {
     const list = shootsByMonth(year, month);
-    const name = year + '年 ' + MONTH_NAMES[month];
     app.innerHTML = `
         <div class="breadcrumb page-enter">
             <a href="#/">首页</a><span class="sep">/</span>
             <span>${year}年 ${MONTH_NAMES[month]}</span>
         </div>
         <div class="sec-header page-enter">
-            <h1>${name}</h1>
+            <h1>${year}年 ${MONTH_NAMES[month]}</h1>
             <p>共 ${list.length} 组素材</p>
         </div>
         <div class="card-grid page-enter" style="padding-bottom:100px">
             ${list.length ? list.map(cardHTML).join('') : '<div class="empty"><p>暂无素材</p></div>'}
-        </div>
-    `;
+        </div>`;
     requestAnimationFrame(animateCards);
 }
 
-/* DETAIL PAGE — 含主要人物 + 拍摄设备 */
+/* DETAIL PAGE */
 function renderDetail(slug) {
     const s = shootBySlug(slug);
-    if (!s) {
-        app.innerHTML = '<div class="empty page-enter" style="padding-top:140px"><p>未找到该素材</p></div>';
-        return;
-    }
-
+    if (!s) { app.innerHTML = '<div class="empty page-enter" style="padding-top:140px"><p>未找到该素材</p></div>'; return; }
     app.innerHTML = `
         <div class="breadcrumb page-enter">
             <a href="#/">首页</a><span class="sep">/</span>
@@ -682,118 +486,84 @@ function renderDetail(slug) {
                         </button>
                     </div>
                     <div class="gal-thumbs" id="galThumbs">
-                        ${s.images.map((img, i) => '<img class="gal-thumb' + (i===0?' active':'') + '" src="' + img + '" data-i="' + i + '" alt="">').join('')}
+                        ${s.images.map((img, i) => '<img class="gal-thumb' + (i===0?' active':'') + '" src="' + img + '" data-i="' + i + '">').join('')}
                     </div>
                 </div>
                 <div class="detail-info">
                     <h1>${s.title}</h1>
                     <div class="detail-date">${s.dateDisplay}</div>
-
                     <div class="info-block">
                         <div class="info-label">简介</div>
                         <div class="info-value">${s.description}</div>
                     </div>
-
                     <div class="info-block">
                         <div class="info-label">主要人物</div>
-                        <div class="tag-row">
-                            ${s.people.map(p => '<span class="tag">' + p + '</span>').join('')}
-                        </div>
+                        <div class="tag-row">${s.people.map(p => '<span class="tag">' + p + '</span>').join('')}</div>
                     </div>
-
                     <div class="info-block">
                         <div class="info-label">拍摄设备</div>
                         <div class="tag-equip">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                                <circle cx="12" cy="17" r="1.5" fill="currentColor"/>
-                                <line x1="10" y1="5" x2="14" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="17" r="1.5" fill="currentColor"/><line x1="10" y1="5" x2="14" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                             ${s.equipment}
                         </div>
                     </div>
-
                     <div class="info-block">
                         <a class="drive-link" href="${s.drive}" target="_blank" rel="noopener noreferrer">
                             前往 Google Drive 下载素材
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    `;
-
+        </div>`;
     document.getElementById('backBtn').addEventListener('click', () => {
         if (window.history.length > 1) window.history.back();
         else window.location.hash = '#/month/' + s.year + '/' + s.month;
     });
-
     initGallery(s.images);
 }
 
-/* CARD HTML */
 function cardHTML(s) {
     const shortDate = s.dateDisplay.replace(/^\d{4}年/, '');
     return '<a class="card hidden" href="#/shoot/' + s.slug + '">'
-        + '<div class="card-img-wrap">'
-        +   '<img class="card-img" src="' + s.cover + '" alt="' + s.title + '" loading="lazy">'
-        +   '<div class="card-date-badge">' + shortDate + '</div>'
-        + '</div>'
-        + '<div class="card-body">'
-        +   '<h3 class="card-title">' + s.title + '</h3>'
-        +   '<p class="card-desc">' + s.description + '</p>'
-        +   '<div class="card-link-row">'
-        +     '查看详情'
-        +     ' <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-        +   '</div>'
-        + '</div>'
-        + '</a>';
+        + '<div class="card-img-wrap"><img class="card-img" src="' + s.cover + '" alt="' + s.title + '" loading="lazy">'
+        + '<div class="card-date-badge">' + shortDate + '</div></div>'
+        + '<div class="card-body"><h3 class="card-title">' + s.title + '</h3>'
+        + '<p class="card-desc">' + s.description + '</p>'
+        + '<div class="card-link-row">查看详情 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
+        + '</div></a>';
 }
 
-/* GALLERY */
 function initGallery(images) {
     let current = 0;
     const mainImg = document.querySelector('.gal-main-img');
     const thumbs = document.querySelectorAll('.gal-thumb');
     if (!mainImg || !images.length) return;
-
     function goTo(i) {
         current = ((i % images.length) + images.length) % images.length;
         mainImg.style.opacity = '0';
         setTimeout(() => { mainImg.src = images[current]; mainImg.style.opacity = '1'; }, 200);
         thumbs.forEach((t, j) => t.classList.toggle('active', j === current));
     }
-
     document.getElementById('galPrev').addEventListener('click', () => goTo(current - 1));
     document.getElementById('galNext').addEventListener('click', () => goTo(current + 1));
     thumbs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.i)));
-
-    function onKey(e) {
-        if (e.key === 'ArrowLeft') goTo(current - 1);
-        if (e.key === 'ArrowRight') goTo(current + 1);
-    }
+    function onKey(e) { if (e.key === 'ArrowLeft') goTo(current - 1); if (e.key === 'ArrowRight') goTo(current + 1); }
     document.addEventListener('keydown', onKey);
     window.addEventListener('hashchange', () => document.removeEventListener('keydown', onKey), { once: true });
 }
 
-/* PARALLAX */
 function initParallax() {
     const bg = document.getElementById('heroBg');
     if (!bg) return;
-    function onScroll() {
-        if (window.scrollY < window.innerHeight) {
-            bg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px) scale(1.05)';
-        }
-    }
+    function onScroll() { if (window.scrollY < window.innerHeight) bg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px) scale(1.05)'; }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('hashchange', () => window.removeEventListener('scroll', onScroll), { once: true });
 }
 
-buildNav();
-router();
+/* 启动 */
+loadData();
 </script>
+
 </body>
 </html>
