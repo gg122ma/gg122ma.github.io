@@ -37,6 +37,11 @@ Supabase `shoots` 表字段：
 | drive_link | text | Google Drive 下载链接 |
 | cover_url | text | 封面图 URL |
 
-## 开发说明
+## 开发工具
+
+| 工具 | 用途 |
+|------|------|
+| MiMo v2.5 Pro | 代码生成、逻辑设计、调试排错 |
+| Claude Code | 代码审查、架构建议 |
 
 本项目由零编程基础通过 AI 辅助独立完成，AI 承担了 Supabase 连接配置、路由设计、画廊交互逻辑和动画系统的代码生成与调试。
